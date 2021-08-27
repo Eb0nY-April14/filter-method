@@ -86,11 +86,41 @@ YOUR CALLBACK FUNCTION FIRST & THEN JUST PASS IT TO THE FILTER METHOD. */
 });
 console.log(candidates); */
 
-/* ANOTHER WAY: BREAKING THE COMPLEX CODE 1 ABOVE INTO SIMPLER CODES */
+/* ANOTHER WAY: BREAKING THE COMPLEX CODE 1 ABOVE INTO SIMPLER CODES. ONE MINOR 
+PROBLEM WITH THIS SOLUTION IS THAT IF WE LOG 'CANDIDATES' VARIABLE TO THE CONSOLE,
+IT CONTAINS ALL THEIR INFORMATION WHICH IS QQUITE VERBOSE  */
 const has5yearsExp = skill => skill.yrsExperience >= 5;
 const hasStrongSkills = student => student.skills.filter(has5yearsExp).length > 0;  //inner filter
 const candidates = students.filter(hasStrongSkills);
-console.log(candidates); 
+console.log(candidates);
+
+/* IF WE DECIDE TO LOG TO THE CONSOLE ONLY THE NAMES OF QUALIFIED CANDIDATES INSTEAD
+ OF HAVING TO LOG TO THE CONSOLE ALL THEIR INFORMATION WHICH IS NOT NEEDED, HOW TO DO
+ THAT USING map() METHOD ARE IN THE CODE BELOW */
+const candidatesNames = candidates.map(candidate => [candidate.name]);
+console.log("Names of Qualified Candidates: ", candidatesNames);
+
+/* TO LOG TO THE CONSOLE ONLY THE PROFESSIONS OF QUALIFIED CANDIDATES USING map() METHOD */
+const candidatesProfession = candidates.map(candidate => [candidate.profession]);
+console.log("Candidates Profession: ", candidatesProfession);
+
+/* TO LOG TO THE CONSOLE ONLY THE IDS OF QUALIFIED CANDIDATES USING map() METHOD */
+const candidatesId = candidates.map(candidate => [candidate.id]);
+console.log("Candidates Id: ", candidatesId);
+
+/* TO LOG TO THE CONSOLE ONLY THE SKILLS OF QUALIFIED CANDIDATES USING map() METHOD */
+const candidatesSkill = candidates.map(candidate => [candidate.skills][0]);
+console.log("Candidates Skills: ", candidatesSkill);
+
+//const studentsWithIds = students.map(student => [student.name, student.id]);
+//console.log(studentsWithIds);
+
+
+
+//const justNames = candidate.filter(c => c.name);
+//console.log(justNames);
+
+//const paul2 = people.filter(p => p.name === "Paul")[0]
   
 /*  DON'T DELETE THIS */  
 /* const candidates = students.filter(student => student.skills);  
