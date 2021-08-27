@@ -112,18 +112,5 @@ console.log("Candidates Id: ", candidatesId);
 const candidatesSkill = candidates.map(candidate => [candidate.skills][0]);
 console.log("Candidates Skills: ", candidatesSkill);
 
-//const studentsWithIds = students.map(student => [student.name, student.id]);
-//console.log(studentsWithIds);
-
-
-
-//const justNames = candidate.filter(c => c.name);
-//console.log(justNames);
-
-//const paul2 = people.filter(p => p.name === "Paul")[0]
-  
-/*  DON'T DELETE THIS */  
-/* const candidates = students.filter(student => student.skills);  
-console.log(candidates); */
 
  
